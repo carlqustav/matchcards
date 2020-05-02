@@ -11,13 +11,12 @@ class Table{
         this.imgInfo = shuffle();
 
         console.log(this.imgInfo);
-        for(var i = 0; i < 5; i++){
-            $("#game").append("<tr class='cardrow'>"); 
+        for (var i = 0; i < 5; i++){
+            var tr = $("<tr class='cardrow'></tr>").appendTo($("#game"));
             for(var j = 0; j < 5; j++){
                 this.grid[i][j] = $(`<td class="card" id="${i*5+j}"></td>`).css({backgroundImage:`url(images/qm.png)`});
-                $("#game").append(this.grid[i][j]);               
+                tr.append(this.grid[i][j]);               
             }
-            $("#game").append("</tr>");  
         }
     }
 }
@@ -35,34 +34,37 @@ function shuffle(){
 
 function showCard(card,imgs){
 
-    card.animate({opacity:"0"},500,function(){
-        card.css({backgroundImage:`url(images/${imgs[card.attr("id")]}.jpg)`});
-    }).animate({opacity:"1"},500);  
+    card.animate({ opacity: "0" }, 500, function () {
+        card
+            .css({ backgroundImage: `url(images/${imgs[card.attr("id")]}.jpg)` })
+            .animate({ opacity: "1" }, 500);
+    });
 }
 
 function hideCards(card1,card2,imgs){
     setTimeout(function(){
-        card1.animate({opacity:"0"},500,function(){
-            card1.css({backgroundImage:`url(images/qm.png)`});
-        }).animate({opacity:"1"},500); 
+        card1.animate({ opacity: "0" }, 500, function () {
+            card1
+                .css({ backgroundImage: `url(images/qm.png)` })
+                .animate({ opacity: "1" }, 500);
+        });
     
-        card2.animate({opacity:"0"},500,function(){
-            card2.css({backgroundImage:`url(images/qm.png)`});
-        }).animate({opacity:"1"},500).delay(500,function(){
-            
-        }); 
+        card2.animate({ opacity: "0" }, 500, function () {
+            card2
+                .css({ backgroundImage: `url(images/qm.png)` })
+                .animate({ opacity: "1" }, 500, function () {
+                    //re enabling card selection at the end of the animations 
+                    selected = 0;
+                });
+        });
     },1500);
-
-    //re enabling card selection at the end of the animations 
-    setTimeout(function(){
-        selected = 0;
-    },1500);
-      
-    clearTimeout();
 }
 
 $(function(){  
     var game = new Table();
+
+    console.log(game);
+
     $(".card").on("click",function(){
         console.log(selected,selectedCard);
         //if the card is already selected or mathced, nothing happens
