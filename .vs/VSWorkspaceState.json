@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\resources"
   ],
-  "SelectedNode": "\\home.html",
+  "SelectedNode": "\\resources\\game.js",
   "PreviewInSolutionExplorer": false
 }
