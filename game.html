@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchThemAll</title>
+    <script src="resources/jquery-3.5.0.min.js"></script>
+    <script src="resources/dropdown.js"></script>
+    <link rel="stylesheet" href="resources/style.css">
+    <style>
+        #game{
+            border-collapse:initial;      
+            margin:30px auto;
+            padding: 7px;
+            border:1px solid white;
+            border-radius: 10px;
+            background-color: white;      
+            -webkit-box-shadow: 0px 0px 50px 11px white;
+            -moz-box-shadow: 0px 0px 50px 11px white;
+            box-shadow: 0px 0px 50px 11px white;
+        }
+        .card{
+            width:150px;
+            height:75px;
+            border-radius: 10px;
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+        #game-panel{
+            margin-top:85px;
+        }
+
+        #game-panel-nav{
+            color:rgb(68, 68, 68);
+            font-size: 30px;
+            margin:2em 0 auto;
+            text-align: center;
+        }
+
+        #game-panel-footer{
+            font-size: 30px;
+            margin:2em auto;
+            text-align: center;
+        }
+   
+        a#retry-button{
+            display: none;
+            padding:10px 6px 0 6px;
+            position: relative;
+            border:1px solid black;
+            border-radius: 50%;
+            -webkit-box-shadow: 0px 0px 50px 11px black;
+            -moz-box-shadow: 0px 0px 50px 11px black;
+            box-shadow: 0px 0px 50px 11px black;
+            transition: all ease 0.2s;
+        }
+
+        a#retry-button:hover{
+            background-color: green;
+            border:1px solid green;
+            -webkit-box-shadow: 0px 0px 50px 11px green;
+            -moz-box-shadow: 0px 0px 50px 11px green;
+            box-shadow: 0px 0px 50px 11px green;
+        }
+
+        a#retry-button img{
+            width: 30px;
+            height: 30px;
+        }
+
+        a#retry-button img:hover{
+            filter: invert(100%);
+        }
+ 
+    </style>
+</head>
+<body>
+    <nav>
+        <a id="title" href="">LegendaryTurkishShows</a>
+        <ul class="pages">
+            <li><a class="navbar-item" href="forum.html">Forum</a></li>
+            <li><a class="navbar-item" href="game.html">Game</a></li>
+            <li><a class="navbar-item" href="home.html">Home</a></li>
+        </ul>
+        <ul class="social-media">
+            <li>
+                <a class="dropdown-button" href="#">Social</a>
+            </li>
+            <li class="dropdown">
+                <a class="navbar-item" href=""><img src="https://img.icons8.com/nolan/64/linkedin-circled.png"/></a>
+                <a class="navbar-item" href=""><img src="https://img.icons8.com/nolan/64/facebook-circled.png"/></a>
+                <a class="navbar-item" href=""><img src="https://img.icons8.com/nolan/64/twitter-circled.png"/></a>
+            </li>
+        </ul>
+        
+    </nav>
+    <div id="game-panel">
+        <div id="game-panel-nav">
+            <p id="message">Remaining tries : <span id="remaining" style="font-size:50px;"></span></p>
+        </div>
+        <table id="game">
+            <script src="resources/game.js"></script>
+        </table>
+        <div id="game-panel-footer">
+            <a href="?" id="retry-button"><img src="images/retry.png" alt=""></a>
+        </div>
+    </div>   
+</body>
+</html>

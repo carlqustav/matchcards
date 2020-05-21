@@ -4,6 +4,8 @@ var selectedCard;
 
 class Table{
     constructor(){
+        this.remainingTry = 13;
+        this.totalMatch = 0;
         this.grid = new Array(5);
         for(var i = 0; i < this.grid.length;i++){
             this.grid[i] = new Array(5);
@@ -61,13 +63,15 @@ function hideCards(card1,card2,imgs){
     clearTimeout();
 }
 
-$(function(){  
+$(function(){
+     
     var game = new Table();
+    $("#remaining").html("" + game.remainingTry);
+    $("#remaining").css({color:"green"});
     $(".card").on("click",function(){
         console.log(selected,selectedCard);
-        //if the card is already selected or mathced, nothing happens
-        if($(this).css("background-image").includes("qm.png")){
-            
+        //if the card is already selected or mathced or it is finished, nothing happens
+        if($(this).css("background-image").includes("qm.png") && game.remainingTry > 0){ 
             //if nothing is selected
             if(selected === 0){               
                 selectedCard = $(this);
@@ -77,17 +81,62 @@ $(function(){
             //if one card is already selected
             else if(selected === 1){
 
-
                 selected = -1; // temporary disabling card picking in case someone clicks on another card
                 
                 //checking the match
                 showCard($(this),game.imgInfo);
                 if(game.imgInfo[selectedCard.attr("id")] == game.imgInfo[$(this).attr("id")]){
                     selected = 0;
+                    game.totalMatch++;
                 }else{                       
                     hideCards($(this),selectedCard,game.imgInfo);
                     selectedCard = undefined;
-                }             
+                }  
+                
+                game.remainingTry -= 1;
+                $("#remaining").html("" + game.remainingTry);
+            }
+
+            if(game.remainingTry === 0){
+                
+                if(game.totalMatch < 2){
+                    $("#message").css({color:"darkred"});
+                }
+                else if (game.totalMatch < 5){
+                    $("#message").css({color:"red"});
+                }
+                else if (game.totalMatch < 8){
+                    $("#message").css({color:"yellow"});
+                }
+                else if (game.totalMatch < 11){
+                    $("#message").css({color:"green"});
+                }
+                else{
+                    $("#message").css({color:"darkgreen"});
+                }
+                $("#retry-button").fadeIn(1000);   
+                $("#message").animate({opacity:0},1000);
+                $("#message").animate({opacity:1},1000);
+                setTimeout(function(){
+                    $("#message").html("You had a total of " + game.totalMatch + " matches.");
+                },1001); 
+            }
+            else{
+                if(game.remainingTry <= 2){
+                    $("#remaining").css({color:"darkred"});
+                }
+                else if (game.remainingTry < 5){
+                    $("#remaining").css({color:"red"});
+                }
+                else if (game.remainingTry < 8){
+                    $("#remaining").css({color:"yellow"});
+                }
+                else if (game.remainingTry < 11){
+                    $("#remaining").css({color:"green"});
+                }
+                else{
+                    $("#remaining").css({color:"darkgreen"});
+                }
             }
         }
         console.log(selected,selectedCard);
