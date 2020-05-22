@@ -5,22 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LTS</title>
     <script src="resources/jquery-3.5.0.min.js"></script>
+    <script src="resources/dropdown.js"></script>
 
     <link rel="stylesheet" href="resources/style.css">
+    <link rel="stylesheet" href="resources/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="resources/slick-1.8.1/slick/slick-theme.css"/>
+    <style>
+    .show-slide{
+    width:80%;
+    margin:150px auto;
+    }
+    .show-slide img{
+    width:100%;
+    }
+
+    h1{
+        color:rgb(116, 116, 116);
+    }
+
+    .heading{
+        font-style: normal;
+        font-size:85px;
+    }
+    .show-slide-container{
+        margin:0 auto;
+        width:60%;
+    }
+    .info{
+        display: flex;
+        margin:0 auto;
+        width:70%;
+        height:500px;
+        border:1px solid black;
+        box-sizing: border-box;
+    }
+
+    .info div{
+        width:50%;
+        height:250px;
+        border:1px solid black;
+        box-sizing: border-box;
+    }
+    </style>
 </head>
 <body>
-    <nav>
+    <nav style="z-index: 9999;">
         <a id="title" href="">LegendaryTurkishShows</a>
-        <ul class="pages">
+        <ul class="pages">   
             <li><a class="navbar-item" href="forum.html">Forum</a></li>
             <li><a class="navbar-item" href="game.html">Game</a></li>
             <li><a class="navbar-item" href="home.html">Home</a></li>
+            <li><a class="navbar-item" href="login.html">Login</a></li>
         </ul>
         <ul class="social-media">
-            <li><a href=""><img src="https://img.icons8.com/nolan/64/linkedin-circled.png"/></a></li>
-            <li><a href=""><img src="https://img.icons8.com/nolan/64/facebook-circled.png"/></a></li>
-            <li><a href=""><img src="https://img.icons8.com/nolan/64/twitter-circled.png"/></a></li>
+            <li>
+                <a class="dropdown-button" href="#">Social</a>
+            </li>
+            <li class="dropdown">
+                <a href="https://www.instagram.com" target="_blank"><img src="https://img.icons8.com/color/480/000000/instagram-new.png"/></a>
+                <a href="https://www.facebook.com" target="_blank"><img src="https://img.icons8.com/color/480/000000/facebook-new.png"/></a>
+                <a href="https://www.twitter.com" target="_blank"><img src="https://img.icons8.com/color/480/000000/twitter.png"/></a>
+            </li>
         </ul>       
     </nav>
+    <div style="margin:10em 0 auto;text-align: center;">
+        <h1 class="heading"> Your friendly Turkish Show forum, for you</h1>
+    </div>
+    <div class="show-slide-container">
+        <div class="show-slide">
+            <div><img src="images/1.jpg" alt=""></div>
+            <div><img src="images/2.jpg" alt=""></div>
+            <div><img src="images/3.jpg" alt=""></div>
+            <div><img src="images/4.jpg" alt=""></div>
+            <div><img src="images/5.jpg" alt=""></div>
+            <div><img src="images/6.jpg" alt=""></div>
+            <div><img src="images/7.jpg" alt=""></div>
+            <div><img src="images/8.jpg" alt=""></div>
+            <div><img src="images/9.jpg" alt=""></div>
+            <div><img src="images/10.jpg" alt=""></div>
+            <div><img src="images/11.jpg" alt=""></div>
+        </div>
+    </div>
+
+    <div class="info">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script type="text/javascript" src="resources/slick-1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="resources/slide.js"></script>
 </body>
 </html>

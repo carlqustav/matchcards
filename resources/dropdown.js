@@ -4,8 +4,8 @@ $(function(){
         console.log(submenu);
         submenu.css({
             position:'absolute',
-            top: $(this).offset().top + $(this).height() + 'px',
-            left: $(this).offset().left + 'px',
+            top:'64px',
+            left:-27,
             zIndex:1000
         });
         submenu.slideDown(300);

@@ -68,7 +68,7 @@ nav li a.navbar-item:active{
 
 nav .social-media {
     position: absolute;
-    right: 0;
+    right: 40px;
 }
 
 nav .social-media li a.dropdown-button{
@@ -82,9 +82,9 @@ nav .social-media li.dropdown{
 nav .social-media li.dropdown a{
     color:#ffffff;
     margin-right:5px;
+    margin-top:40px;
     font-weight:bold;
     font-size:12px;
-    font-family:verdana;
     text-decoration:none;
     display:block;
     width:100px;
@@ -94,8 +94,8 @@ nav .social-media li.dropdown a{
 }
 
 nav .social-media li a img{
-    width:32px;
-    height:32px;
+    width:64px;
+    height:64px;
 }
 
 nav a#title{
