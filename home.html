@@ -32,19 +32,110 @@
         width:60%;
     }
     .info{
+        position: relative;
         display: flex;
-        margin:0 auto;
-        width:70%;
-        height:500px;
-        border:1px solid black;
+        margin:10px  auto;
+        width:65%;
+        height:600px;
         box-sizing: border-box;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 0px 50px 33Spx white;
+        -moz-box-shadow: 0px 0px 50px 33px white;
+        box-shadow: 0px 0px 50px 33px white;
     }
 
     .info div{
-        width:50%;
-        height:250px;
-        border:1px solid black;
+        position:absolute;
+        height:50%;
         box-sizing: border-box;
+        text-align: center;
+    }
+
+    .info div h2{
+        padding-top:19px;
+        color:rgb(54, 54, 54);
+    }
+
+    .info div p{
+        padding:19px 15px 10px 15px;
+        font-size: 20px;
+        color:white;
+    }
+
+    .info .up-right-corner p{
+        margin-bottom: 40px;
+    }
+    
+    .info .up-left-corner{
+        background:pink;
+        width:50%;
+    }
+
+    .info .down-left-corner{
+        background: rgb(77, 77, 255);
+        width:50%;
+        bottom: 0;
+    }
+
+    .info .up-right-corner{
+        background: chartreuse;
+        width:50%;
+        left:50%;
+    }
+
+    .info .down-right-corner{
+        background: crimson;
+        width:50%;
+        left:50%;
+        bottom: 0;
+    }
+
+    .play-button{
+        margin-top:15px;
+        padding-top:30px;
+        padding-left:3px;
+        padding-right:3px;
+        position: relative;
+        border:1px solid white;
+        border-radius: 50%;
+        -webkit-box-shadow: 0px 0px 50px 11px white;
+        -moz-box-shadow: 0px 0px 50px 11px white;
+        box-shadow: 0px 0px 50px 11px white;
+        transition: all ease 0.2s;
+    }
+
+    .play-button:hover{
+        background-color: green;
+        border:1px solid green;
+        -webkit-box-shadow: 0px 0px 50px 11px green;
+        -moz-box-shadow: 0px 0px 50px 11px green;
+        box-shadow: 0px 0px 50px 11px green;
+    }
+
+    .play-button img{
+        width: 40px;
+        height: 40px;
+        transition: all ease 5s;
+        transform-style: preserve-3d;
+    }
+
+    .play-button img:hover{
+       transform: rotate(3600deg);
+    }
+
+    .sign-up-area{
+        display: flex;
+        width: 90%;
+        border:1px solid black;
+        margin: 2px auto;
+    }
+
+    .input-field{
+        text-align: center;
+    }
+
+    .footer{
+        margin:300px auto;
     }
     </style>
 </head>
@@ -88,10 +179,48 @@
     </div>
 
     <div class="info">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="up-left-corner">
+            <h2>Where is this place?</h2>
+            <p>This is the place for sharing and experiencing. You wil find yourself happy in a community where everybody shares your interests, such as dank Turkish shows!</p>
+        </div>
+        <div class="up-right-corner">
+            <h2>What is here to do?</h2>
+            <p style="z-index: 9999;">You can head on to our forum to discuss or open discussions yourself. By any chance you think you can beat our game, you are welcome to do so!</p>
+            <a href="game.html" class="play-button"><img src="https://img.icons8.com/bubbles/50/000000/play.png"/></a>
+        </div>
+        <div class="down-left-corner">
+            <h2>Which Turkish shows that we are talking about?</h2>
+            <p>Aşkı Memnu, Yaprak Dökümü, Cennet Mahallesi, Akasya Durağı, Deep Turkish Web are the most common ones, but don't be shy to share your favorite in our community.</p>
+            
+        </div>
+        <div class="down-right-corner">
+            <h2>How am I going to do all of this?</h2>
+            <p>Sign up if you haven't!</p>
+            <div class="sign-up-area">
+                <form action="">
+                    <div class=input-field>
+                        <span>Nickname</span>
+                        <input type="text" name="nickname" id="nickname">
+                    </div> 
+                    <div class=input-field>
+                        <span>Email</span>
+                        <input type="email" name="email" id="email">
+                    </div> 
+                    <div class=input-field>
+                        <span>Password</span>
+                        <input type="password" name="password" id="password">
+                    </div> 
+                    <div class=input-field>
+                        <span>Password, again</span>
+                        <input type="password" name="verifiyPassword" id="verifiyPassword">
+                    </div> 
+                </form>                    
+            </div>
+            
+        </div>
+    </div>
+    <div class="footer">
+
     </div>
     <script type="text/javascript" src="resources/slick-1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="resources/slide.js"></script>
